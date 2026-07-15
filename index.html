@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Nexus - The Ultimate Roblox Script Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #0a0a0a;
+            --bg-tertiary: #121212;
+            --border-color: #222222;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --accent-primary: #ffffff;
+            --accent-hover: #000000;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 0.95rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-primary);
+            color: var(--accent-hover);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            color: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-primary);
+            color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== SEARCH & FILTER BAR ===== */
+        .search-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .search-container {
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--text-primary);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+            background-color: #1a1a1a;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .category-filter {
+            padding: 1rem 1.5rem;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-filter:focus {
+            outline: none;
+            border-color: var(--text-primary);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+        }
+
+        .category-filter option {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SCRIPT GRID ===== */
+        .scripts-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .scripts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .script-card {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .script-card:hover {
+            border-color: var(--text-primary);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .script-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .script-image svg {
+            width: 80px;
+            height: 80px;
+            opacity: 0.3;
+            transition: var(--transition);
+        }
+
+        .script-card:hover .script-image svg {
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+
+        .script-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .script-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .script-game {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .script-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .status-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 2px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+        }
+
+        .status-working {
+            background-color: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        .status-patched {
+            background-color: var(--text-secondary);
+            color: var(--bg-primary);
+        }
+
+        .script-footer {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .btn-get {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-primary);
+            color: var(--accent-hover);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-get:hover {
+            background-color: var(--accent-hover);
+            color: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* ===== EXECUTOR SECTION ===== */
+        .executor-section {
+            max-width: 1400px;
+            margin: 4rem auto 0;
+            padding: 0 2rem;
+        }
+
+        .executor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .executor-card {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .executor-card:hover {
+            border-color: var(--text-primary);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .executor-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .executor-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .executor-icon svg {
+            width: 40px;
+            height: 40px;
+            opacity: 0.5;
+        }
+
+        .executor-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .executor-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .executor-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .executor-features li {
+            padding: 0.7rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .executor-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--text-primary);
+            font-weight: bold;
+        }
+
+        .executor-footer {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .executor-footer .btn {
+            flex: 1;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: var(--text-secondary);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .code-block {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block code {
+            color: var(--text-primary);
+            font-family: 'Courier New', 'Courier', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            display: block;
+            white-space: pre;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--text-primary);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .copy-feedback {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--text-primary);
+            color: var(--bg-primary);
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            animation: slideInUp 0.3s ease-in-out;
+            z-index: 2001;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--bg-tertiary);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: var(--text-secondary);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .scripts-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .executor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 2rem 1.5rem;
+            }
+
+            .hero h1 {
+                margin-bottom: 0.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-buttons {
+                gap: 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .search-section {
+                padding: 0 1.5rem;
+                margin: 2rem auto;
+            }
+
+            .scripts-section {
+                padding: 0 1.5rem 2rem;
+            }
+
+            .scripts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .executor-section {
+                padding: 0 1.5rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                max-height: 90vh;
+            }
+
+            .modal-header {
+                padding: 1.5rem;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .search-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .copy-feedback {
+                bottom: 1rem;
+                right: 1rem;
+                left: 1rem;
+            }
+        }
+
+        /* ===== NO RESULTS MESSAGE ===== */
+        .no-results {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .no-results p {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">SCRIPT NEXUS</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#executors">Executors</a></li>
+                <li><a href="#scripts">Scripts</a></li>
+                <li><a href="#status">Status</a></li>
+                <li><a href="https://discord.gg" target="_blank">Discord</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>The Ultimate Roblox Script Hub</h1>
+            <p>Discover, share, and execute premium Roblox scripts. Access thousands of verified executors and scripts for your favorite games.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('scriptModal').classList.add('active')">Download Executor</button>
+                <button class="btn btn-secondary" onclick="document.querySelector('.search-input').focus()">Browse Scripts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH & FILTER SECTION -->
+    <section class="search-section" id="scripts">
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Search scripts by name or game..." 
+                    id="searchInput"
+                    onkeyup="filterScripts()"
+                >
+            </div>
+            <select class="category-filter" id="categoryFilter" onchange="filterScripts()">
+                <option value="">All Games</option>
+                <option value="blox-fruits">Blox Fruits</option>
+                <option value="pet-simulator">Pet Simulator X</option>
+                <option value="adopt-me">Adopt Me</option>
+                <option value="tycoon">Tycoon Games</option>
+                <option value="obby">Obbies</option>
+            </select>
+        </div>
+
+        <!-- SCRIPTS GRID -->
+        <div class="scripts-section">
+            <h2 class="section-title">Featured Scripts</h2>
+            <div class="scripts-grid" id="scriptsGrid">
+                <!-- Scripts will be populated by JavaScript -->
+            </div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <p>No scripts found matching your search. Try adjusting your filters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTOR SECTION -->
+    <section class="executor-section" id="executors">
+        <h2 class="section-title">Top Executors</h2>
+        <div class="executor-grid">
+            <div class="executor-card">
+                <div class="executor-header">
+                    <div class="executor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
+                        </svg>
+                    </div>
+                    <div class="executor-info">
+                        <h3>Executor X</h3>
+                        <p>Premium • Highly Stable</p>
+                    </div>
+                </div>
+                <ul class="executor-features">
+                    <li>64-bit architecture support</li>
+                    <li>Lua 5.1 compatibility</li>
+                    <li>Advanced debugging tools</li>
+                    <li>Zero-day exploit protection</li>
+                    <li>24/7 technical support</li>
+                </ul>
+                <div class="executor-footer">
+                    <button class="btn btn-primary" onclick="showModal('Executor X')">Download</button>
+                    <button class="btn btn-secondary" onclick="alert('Visit Discord for more info')">Info</button>
+                </div>
+            </div>
+
+            <div class="executor-card">
+                <div class="executor-header">
+                    <div class="executor-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        </svg>
+                    </div>
+                    <div class="executor-info">
+                        <h3>Executor Y</h3>
+                        <p>Enterprise • Undetected</p>
+                    </div>
+                </div>
+                <ul class="executor-features">
+                    <li>Anti-ban technology</li>
+                    <li>Cloud-based execution</li>
+                    <li>Real-time script updates</li>
+                    <li>Multi-game support</li>
+                    <li>Community forum access</li>
+                </ul>
+                <div class="executor-footer">
+                    <button class="btn btn-primary" onclick="showModal('Executor Y')">Download</button>
+                    <button class="btn btn-secondary" onclick="alert('Visit Discord for more info')">Info</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPT MODAL -->
+    <div class="modal" id="scriptModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Script Code</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                    <code id="codeContent">-- Loading script code...
+-- This is a sample Lua script for Roblox
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Auto farm function
+local function autoFarm()
+    while true do
+        -- Your farming logic here
+        task.wait(1)
+    end
+end
+
+-- Start farming
+autoFarm()
+
+-- Clean up on player death
+character.Humanoid.Died:Connect(function()
+    print("Character died, stopping farm...")
+end)</code>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; text-align: center;">
+                    Paste this code into your executor's console. Always use a trusted executor.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Script Nexus. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Support</a></p>
+    </footer>
+
+    <script>
+        // Sample script data
+        const scriptsData = [
+            {
+                id: 1,
+                title: "Blox Fruits Autofarm",
+                game: "blox-fruits",
+                gameName: "Blox Fruits",
+                status: "working",
+                category: "Farm",
+                code: `-- Blox Fruits AutoFarm Script
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Start farming
+print("Autofarm Started")
+while true do
+    -- Farming logic
+    task.wait(1)
+end`
+            },
+            {
+                id: 2,
+                title: "Pet Simulator X Money Glitch",
+                game: "pet-simulator",
+                gameName: "Pet Simulator X",
+                status: "patched",
+                category: "Exploit",
+                code: `-- Pet Simulator X Script
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Money duplication
+function duplicateMoney(amount)
+    -- Implementation here
+    print("Duplicating: " .. amount)
+end
+
+duplicateMoney(1000000)`
+            },
+            {
+                id: 3,
+                title: "Adopt Me Pet Duper",
+                game: "adopt-me",
+                gameName: "Adopt Me",
+                status: "working",
+                category: "Dupe",
+                code: `-- Adopt Me Pet Duplication
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local function dupePet(petName)
+    print("Attempting to dupe: " .. petName)
+    -- Duplication code here
+end
+
+dupePet("Legendary Dragon")`
+            },
+            {
+                id: 4,
+                title: "Universal Tycoon Clicker",
+                game: "tycoon",
+                gameName: "Tycoon Games",
+                status: "working",
+                category: "Click",
+                code: `-- Universal Tycoon Clicker
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local clickSpeed = 0.1
+
+while true do
+    -- Click logic
+    task.wait(clickSpeed)
+end`
+            },
+            {
+                id: 5,
+                title: "Obby Speed Runner",
+                game: "obby",
+                gameName: "Obbies",
+                status: "working",
+                category: "Speed",
+                code: `-- Speedrun Script for Obbies
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local character = player.Character
+
+-- Increase speed
+character.Humanoid.WalkSpeed = 50
+
+print("Speed increased to 50!")`
+            },
+            {
+                id: 6,
+                title: "Advanced Game Teleporter",
+                game: "pet-simulator",
+                gameName: "Pet Simulator X",
+                status: "working",
+                category: "Teleport",
+                code: `-- Advanced Teleporter Script
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local character = player.Character
+
+function teleportTo(position)
+    character:MoveTo(position)
+end
+
+-- Teleport to specific location
+teleportTo(Vector3.new(100, 50, 100))`
+            }
+        ];
+
+        // Function to render scripts
+        function renderScripts(scripts) {
+            const grid = document.getElementById('scriptsGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (scripts.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            grid.innerHTML = scripts.map(script => `
+                <div class="script-card">
+                    <div class="script-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <div class="script-content">
+                        <h3 class="script-title">${script.title}</h3>
+                        <p class="script-game">${script.gameName}</p>
+                        <div class="script-meta">
+                            <span class="status-badge status-${script.status}">${script.status.toUpperCase()}</span>
+                            <span style="color: var(--text-secondary);">${script.category}</span>
+                        </div>
+                        <div class="script-footer">
+                            <button class="btn-get" onclick='showScriptModal("${script.title}", "${script.code.replace(/"/g, '\\"').replace(/\n/g, '\\n')}")'>Get Script</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter scripts
+        function filterScripts() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+
+            const filtered = scriptsData.filter(script => {
+                const matchesSearch = script.title.toLowerCase().includes(searchInput) || 
+                                    script.gameName.toLowerCase().includes(searchInput);
+                const matchesCategory = !category || script.game === category;
+                return matchesSearch && matchesCategory;
+            });
+
+            renderScripts(filtered);
+        }
+
+        // Show script modal
+        function showScriptModal(title, code) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('codeContent').textContent = code;
+            document.getElementById('scriptModal').classList.add('active');
+        }
+
+        // Show generic modal
+        function showModal(title) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('codeContent').textContent = `-- ${title} Installation Guide\n\nDownload the latest version from our Discord server.\n\n1. Extract the files\n2. Run the installer\n3. Follow the setup wizard\n4. Start executing scripts!`;
+            document.getElementById('scriptModal').classList.add('active');
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('scriptModal').classList.remove('active');
+        }
+
+        // Copy code
+        function copyCode() {
+            const code = document.getElementById('codeContent').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const feedback = document.createElement('div');
+                feedback.className = 'copy-feedback';
+                feedback.textContent = '✓ Code copied to clipboard!';
+                document.body.appendChild(feedback);
+                setTimeout(() => feedback.remove(), 2000);
+            });
+        }
+
+        // Close modal on outside click
+        document.getElementById('scriptModal').addEventListener('click', (e) => {
+            if (e.target.id === 'scriptModal') {
+                closeModal();
+            }
+        });
+
+        // Initial render
+        renderScripts(scriptsData);
+    </script>
+</body>
+</html>
