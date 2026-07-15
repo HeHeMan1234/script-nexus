@@ -20,7 +20,10 @@
             --text-secondary: #888888;
             --accent-primary: #ffffff;
             --accent-hover: #000000;
+            --accent-color: #4f46e5;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --success: #10b981;
+            --danger: #ef4444;
         }
 
         html {
@@ -70,7 +73,7 @@
             justify-content: center;
             font-size: 1.5rem;
             font-weight: 900;
-            background: linear-gradient(135deg, #ffffff, #888888);
+            background: linear-gradient(135deg, #4f46e5, #06b6d4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -86,7 +89,7 @@
         }
 
         .logo:hover {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            text-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
         }
 
         .nav-right {
@@ -118,7 +121,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--text-primary);
+            background-color: var(--accent-color);
             transition: var(--transition);
         }
 
@@ -134,10 +137,10 @@
 
         .btn-signin {
             padding: 0.6rem 1.2rem;
-            background-color: var(--accent-primary);
-            color: var(--accent-hover);
+            background-color: var(--accent-color);
+            color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
@@ -148,7 +151,7 @@
 
         .btn-signin:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
         }
 
         .user-profile {
@@ -158,19 +161,19 @@
             padding: 0.5rem 1rem;
             background-color: var(--bg-tertiary);
             border: 1px solid var(--border-color);
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         .user-avatar {
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #ffffff, #888888);
+            background: linear-gradient(135deg, #4f46e5, #06b6d4);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            color: var(--bg-primary);
+            color: white;
             font-size: 0.9rem;
         }
 
@@ -189,36 +192,15 @@
 
         .btn-logout:hover {
             border-color: var(--text-primary);
-            color: var(--text-primary);
-        }
-
-        .community-btn {
-            padding: 0.6rem 1.2rem;
-            background-color: var(--accent-primary);
-            color: var(--accent-hover);
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.3px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .community-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+            color: var(--danger);
         }
 
         .upload-btn {
             padding: 0.6rem 1.2rem;
-            background-color: var(--accent-primary);
-            color: var(--accent-hover);
+            background-color: var(--success);
+            color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
@@ -229,7 +211,7 @@
 
         .upload-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
         }
 
         /* ===== HERO SECTION ===== */
@@ -253,8 +235,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -270,6 +252,10 @@
             margin-bottom: 1rem;
             line-height: 1.1;
             letter-spacing: -1px;
+            background: linear-gradient(135deg, #4f46e5, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero p {
@@ -292,7 +278,7 @@
             font-size: 1rem;
             font-weight: 600;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
@@ -305,29 +291,27 @@
         }
 
         .btn-primary {
-            background-color: var(--accent-primary);
-            color: var(--accent-hover);
+            background-color: var(--accent-color);
+            color: white;
         }
 
         .btn-primary:hover {
-            background-color: var(--accent-hover);
-            color: var(--accent-primary);
-            border: 1px solid var(--accent-primary);
+            background-color: #4338ca;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
         }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--accent-primary);
-            border: 1px solid var(--accent-primary);
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
         }
 
         .btn-secondary:hover {
-            background-color: var(--accent-primary);
-            color: var(--accent-hover);
+            background-color: var(--accent-color);
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
         }
 
         /* ===== SEARCH & FILTER BAR ===== */
@@ -363,14 +347,14 @@
             border: 1px solid var(--border-color);
             color: var(--text-primary);
             font-size: 1rem;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: var(--transition);
         }
 
         .search-input:focus {
             outline: none;
-            border-color: var(--text-primary);
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
             background-color: #1a1a1a;
         }
 
@@ -384,15 +368,15 @@
             border: 1px solid var(--border-color);
             color: var(--text-primary);
             font-size: 1rem;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             transition: var(--transition);
         }
 
         .category-filter:focus {
             outline: none;
-            border-color: var(--text-primary);
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
         }
 
         .category-filter option {
@@ -435,18 +419,19 @@
         .script-card {
             background-color: var(--bg-tertiary);
             border: 1px solid var(--border-color);
-            border-radius: 4px;
+            border-radius: 8px;
             overflow: hidden;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
             height: 100%;
             position: relative;
+            cursor: pointer;
         }
 
         .script-card:hover {
-            border-color: var(--text-primary);
-            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
             transform: translateY(-4px);
         }
 
@@ -456,7 +441,7 @@
             right: 1rem;
             font-size: 0.75rem;
             color: var(--text-secondary);
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 0.3rem 0.6rem;
             border-radius: 3px;
             z-index: 10;
@@ -508,8 +493,9 @@
 
         .script-game {
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: var(--accent-color);
             margin-bottom: 0.8rem;
+            font-weight: 600;
         }
 
         .script-description {
@@ -542,6 +528,206 @@
         .script-downloads {
             font-size: 0.85rem;
             color: var(--text-secondary);
+        }
+
+        /* ===== MODAL STYLES ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--bg-tertiary);
+            margin: 5% auto;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-modal {
+            font-size: 2rem;
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            border: none;
+            background: none;
+        }
+
+        .close-modal:hover {
+            color: var(--text-primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 6px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: #1a1a1a;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+
+        .btn-submit:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        /* ===== CODE VIEWER MODAL ===== */
+        .code-viewer {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .code-viewer code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #06b6d4;
+        }
+
+        .copy-code-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .copy-code-btn:hover {
+            background-color: #4338ca;
+        }
+
+        /* ===== EXECUTOR SECTION ===== */
+        .executors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .executor-card {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .executor-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .executor-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .executor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ===== FOOTER ===== */
@@ -580,7 +766,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--text-primary);
+            color: var(--accent-color);
             transform: translateX(4px);
         }
 
@@ -591,6 +777,24 @@
             color: var(--text-secondary);
         }
 
+        .success-message {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--danger);
+            color: var(--danger);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 gap: 1.5rem;
@@ -598,6 +802,11 @@
 
             .nav-container {
                 padding: 1rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
             }
         }
     </style>
@@ -607,16 +816,17 @@
     <nav>
         <div class="nav-container">
             <div class="logo-section">
-                <div class="logo-icon"></> </div>
+                <div class="logo-icon">⚡</div>
                 <a href="#" class="logo">Velocity.net</a>
             </div>
             <div class="nav-right">
                 <ul class="nav-links">
                     <li><a href="#scripts">Scripts</a></li>
+                    <li><a href="#executors">Executors</a></li>
                     <li><a href="https://HeHeMan1234.github.io/communication-nexus/">Community</a></li>
                 </ul>
-                <div class="auth-section">
-                    <button class="btn-signin">Sign In</button>
+                <div class="auth-section" id="authSection">
+                    <button class="btn-signin" onclick="openSignInModal()">Sign In</button>
                 </div>
             </div>
         </div>
@@ -629,7 +839,7 @@
             <p>The Ultimate Roblox Script Hub - Explore, Share & Collaborate</p>
             <div class="hero-buttons">
                 <a href="#scripts" class="btn btn-primary">Explore Scripts</a>
-                <a href="https://HeHeMan1234.github.io/communication-nexus/" class="btn btn-secondary">Join Community</a>
+                <a href="#executors" class="btn btn-secondary">View Executors</a>
             </div>
         </div>
     </section>
@@ -638,6 +848,7 @@
     <section class="search-section" id="scripts">
         <div class="search-top">
             <h2 class="section-title">Browse Scripts</h2>
+            <button class="upload-btn" onclick="checkAuthBeforeUpload()">Upload Script</button>
         </div>
         <div class="search-container">
             <div class="search-input-wrapper">
@@ -648,6 +859,7 @@
                 <option value="game">Game Exploits</option>
                 <option value="utility">Utility</option>
                 <option value="admin">Admin</option>
+                <option value="executor">Executor</option>
                 <option value="other">Other</option>
             </select>
         </div>
@@ -656,28 +868,15 @@
     <!-- Scripts Grid -->
     <section class="scripts-section">
         <div class="scripts-grid" id="scriptsGrid">
-            <!-- Sample Script Cards -->
-            <div class="script-card">
-                <div class="script-author"> key system 🔑</div>
-                <div class="script-image">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
-                </div>
-                <div class="script-content">
-                    <h3 class="script-title">Kiciahook v3</h3>
-                    <p class="script-game">Rivals</p>
-                    <p class="script-description">#1 Rivals script.</p>
-                    <div class="script-footer">
-                        <span class="script-rating">
-                            <span class="star">★</span> 4.5
-                        </span>
-                        <span class="script-downloads">2.3k downloads</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more script cards as needed -->
+            <!-- Scripts will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Executors Section -->
+    <section class="scripts-section" id="executors">
+        <h2 class="section-title">Popular Executors</h2>
+        <div class="executors-grid" id="executorsGrid">
+            <!-- Executors will be loaded here -->
         </div>
     </section>
 
@@ -685,9 +884,10 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Nexus Scripts</h3>
+                <h3>Velocity.net</h3>
                 <ul>
                     <li><a href="#scripts">Browse Scripts</a></li>
+                    <li><a href="#executors">Executors</a></li>
                     <li><a href="https://HeHeMan1234.github.io/communication-nexus/">Community Forum</a></li>
                 </ul>
             </div>
@@ -696,43 +896,606 @@
                 <ul>
                     <li><a href="https://HeHeMan1234.github.io/communication-nexus/">Discussions</a></li>
                     <li><a href="https://HeHeMan1234.github.io/communication-nexus/">Help & Support</a></li>
+                    <li><a href="#">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Nexus Scripts. All rights reserved.</p>
+            <p>&copy; 2026 Velocity.net. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- ===== AUTHENTICATION MODAL ===== -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="authTitle">Create Account</span>
+                <button class="close-modal" onclick="closeAuthModal()">&times;</button>
+            </div>
+            <div id="authMessage"></div>
+            <form id="authForm" onsubmit="handleAuth(event)">
+                <div class="form-group">
+                    <label for="authEmail">Gmail Address</label>
+                    <input type="email" id="authEmail" required placeholder="your.email@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label for="authPassword">Password</label>
+                    <input type="password" id="authPassword" required placeholder="Enter a strong password">
+                </div>
+                <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                    <label for="authConfirmPassword">Confirm Password</label>
+                    <input type="password" id="authConfirmPassword" placeholder="Confirm your password">
+                </div>
+                <button type="submit" class="btn-submit" id="authButton">Create Account</button>
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-secondary);">
+                    <button type="button" onclick="toggleAuthMode()" style="background: none; border: none; color: var(--accent-color); cursor: pointer; text-decoration: underline;">
+                        <span id="toggleText">Already have an account? Sign In</span>
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPT UPLOAD MODAL ===== -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Upload Script</span>
+                <button class="close-modal" onclick="closeUploadModal()">&times;</button>
+            </div>
+            <form id="uploadForm" onsubmit="handleUploadScript(event)">
+                <div class="form-group">
+                    <label for="scriptTitle">Script Name</label>
+                    <input type="text" id="scriptTitle" required placeholder="Enter script name">
+                </div>
+                <div class="form-group">
+                    <label for="scriptGame">Game/Category</label>
+                    <input type="text" id="scriptGame" required placeholder="e.g., Rivals, Roblox Game">
+                </div>
+                <div class="form-group">
+                    <label for="scriptDescription">Description</label>
+                    <textarea id="scriptDescription" required placeholder="Describe what your script does"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="scriptCategory">Category</label>
+                    <select id="scriptCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="game">Game Exploits</option>
+                        <option value="utility">Utility</option>
+                        <option value="admin">Admin</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="scriptCode">Script Code</label>
+                    <textarea id="scriptCode" required placeholder="Paste your script code here"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="scriptImage">Script Image (URL)</label>
+                    <input type="url" id="scriptImage" placeholder="https://example.com/image.jpg">
+                </div>
+                <button type="submit" class="btn-submit">Upload Script</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPT VIEWER MODAL ===== -->
+    <div id="scriptViewerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="viewerTitle">Script Viewer</span>
+                <button class="close-modal" onclick="closeScriptViewer()">&times;</button>
+            </div>
+            <div id="viewerContent">
+                <p id="viewerGameName" style="color: var(--accent-color); font-weight: 600; margin-bottom: 1rem;"></p>
+                <p id="viewerDescription" style="margin-bottom: 1rem;"></p>
+                <div class="code-viewer">
+                    <code id="viewerCode"></code>
+                </div>
+                <button class="copy-code-btn" onclick="copyScriptCode()">📋 Copy Code</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== EXECUTOR VIEWER MODAL ===== -->
+    <div id="executorViewerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="executorViewerTitle">Executor Details</span>
+                <button class="close-modal" onclick="closeExecutorViewer()">&times;</button>
+            </div>
+            <div id="executorViewerContent">
+                <p id="executorDescription" style="margin-bottom: 1rem;"></p>
+                <div class="code-viewer">
+                    <code id="executorCode"></code>
+                </div>
+                <button class="copy-code-btn" onclick="copyExecutorCode()">📋 Copy Executor</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Sample data
-        const scripts = [
-            {
-                title: 'Speed Script',
-                game: 'Roblox Game',
-                description: 'A versatile speed enhancement script perfect for all your scripting needs.',
-                author: 'Dev',
-                rating: 4.5,
-                downloads: '2.3k'
-            },
-            {
-                title: 'Rivals',
-                game: 'Game Admin',
-                description: 'Professional admin panel for complete server control.',
-                author: 'Admin',
-                rating: 4.8,
-                downloads: '5.1k'
+        // ===== USER AUTHENTICATION SYSTEM =====
+        let isSignInMode = false;
+        let currentUser = null;
+        let authMode = 'signup'; // 'signup' or 'signin'
+
+        // Initialize app
+        function initializeApp() {
+            loadUsers();
+            checkIfUserLoggedIn();
+            loadScriptsAndExecutors();
+        }
+
+        // Storage functions
+        function loadUsers() {
+            const users = localStorage.getItem('velocityUsers');
+            return users ? JSON.parse(users) : {};
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem('velocityUsers', JSON.stringify(users));
+        }
+
+        function loadScripts() {
+            const scripts = localStorage.getItem('velocityScripts');
+            return scripts ? JSON.parse(scripts) : [];
+        }
+
+        function saveScripts(scripts) {
+            localStorage.setItem('velocityScripts', JSON.stringify(scripts));
+        }
+
+        // Check if user is logged in
+        function checkIfUserLoggedIn() {
+            const user = localStorage.getItem('currentUser');
+            if (user) {
+                currentUser = JSON.parse(user);
+                updateAuthUI();
+                checkAutoOpenModal();
+            } else {
+                setTimeout(() => openSignInModal(), 500);
             }
-        ];
+        }
+
+        // Auto-open sign in if not logged in
+        function checkAutoOpenModal() {
+            if (!currentUser) {
+                document.getElementById('authModal').style.display = 'block';
+            }
+        }
+
+        // Open sign in modal
+        function openSignInModal() {
+            authMode = 'signup';
+            isSignInMode = false;
+            document.getElementById('confirmPasswordGroup').style.display = 'none';
+            document.getElementById('authTitle').textContent = 'Create Account';
+            document.getElementById('authButton').textContent = 'Create Account';
+            document.getElementById('toggleText').textContent = 'Already have an account? Sign In';
+            document.getElementById('authForm').reset();
+            document.getElementById('authMessage').innerHTML = '';
+            document.getElementById('authModal').style.display = 'block';
+        }
+
+        // Toggle auth mode
+        function toggleAuthMode() {
+            if (authMode === 'signup') {
+                authMode = 'signin';
+                isSignInMode = true;
+                document.getElementById('confirmPasswordGroup').style.display = 'none';
+                document.getElementById('authTitle').textContent = 'Sign In';
+                document.getElementById('authButton').textContent = 'Sign In';
+                document.getElementById('toggleText').textContent = 'Don\'t have an account? Create one';
+            } else {
+                authMode = 'signup';
+                isSignInMode = false;
+                document.getElementById('confirmPasswordGroup').style.display = 'block';
+                document.getElementById('authTitle').textContent = 'Create Account';
+                document.getElementById('authButton').textContent = 'Create Account';
+                document.getElementById('toggleText').textContent = 'Already have an account? Sign In';
+            }
+            document.getElementById('authForm').reset();
+            document.getElementById('authMessage').innerHTML = '';
+        }
+
+        // Handle authentication
+        function handleAuth(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('authEmail').value.trim();
+            const password = document.getElementById('authPassword').value;
+            const messageDiv = document.getElementById('authMessage');
+
+            // Validate email
+            if (!email.includes('@gmail.com')) {
+                messageDiv.innerHTML = '<div class="error-message">⚠️ Please use a Gmail address (@gmail.com)</div>';
+                return;
+            }
+
+            if (password.length < 6) {
+                messageDiv.innerHTML = '<div class="error-message">⚠️ Password must be at least 6 characters</div>';
+                return;
+            }
+
+            const users = loadUsers();
+
+            if (authMode === 'signup') {
+                const confirmPassword = document.getElementById('authConfirmPassword').value;
+                if (password !== confirmPassword) {
+                    messageDiv.innerHTML = '<div class="error-message">⚠️ Passwords do not match</div>';
+                    return;
+                }
+
+                if (users[email]) {
+                    messageDiv.innerHTML = '<div class="error-message">⚠️ Account already exists</div>';
+                    return;
+                }
+
+                // Create new account
+                users[email] = {
+                    email: email,
+                    password: password,
+                    createdAt: new Date().toISOString(),
+                    scripts: []
+                };
+                saveUsers(users);
+                messageDiv.innerHTML = '<div class="success-message">✅ Account created successfully! Signing in...</div>';
+
+                setTimeout(() => {
+                    currentUser = { email: email };
+                    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                    updateAuthUI();
+                    closeAuthModal();
+                    loadScriptsAndExecutors();
+                }, 1000);
+
+            } else {
+                // Sign in
+                if (!users[email]) {
+                    messageDiv.innerHTML = '<div class="error-message">⚠️ Account not found</div>';
+                    return;
+                }
+
+                if (users[email].password !== password) {
+                    messageDiv.innerHTML = '<div class="error-message">⚠️ Incorrect password</div>';
+                    return;
+                }
+
+                messageDiv.innerHTML = '<div class="success-message">✅ Signing in...</div>';
+
+                setTimeout(() => {
+                    currentUser = { email: email };
+                    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                    updateAuthUI();
+                    closeAuthModal();
+                    loadScriptsAndExecutors();
+                }, 1000);
+            }
+        }
+
+        // Update auth UI
+        function updateAuthUI() {
+            const authSection = document.getElementById('authSection');
+            if (currentUser) {
+                authSection.innerHTML = `
+                    <div class="user-profile">
+                        <div class="user-avatar">${currentUser.email.charAt(0).toUpperCase()}</div>
+                        <span style="font-size: 0.9rem;">${currentUser.email.split('@')[0]}</span>
+                        <button class="btn-logout" onclick="handleLogout()">Logout</button>
+                    </div>
+                `;
+            }
+        }
+
+        // Close auth modal
+        function closeAuthModal() {
+            document.getElementById('authModal').style.display = 'none';
+        }
+
+        // Logout
+        function handleLogout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            updateAuthUI();
+            document.getElementById('scriptsGrid').innerHTML = '';
+            document.getElementById('executorsGrid').innerHTML = '';
+            setTimeout(() => openSignInModal(), 300);
+        }
+
+        // Check auth before upload
+        function checkAuthBeforeUpload() {
+            if (!currentUser) {
+                alert('Please sign in first to upload a script');
+                openSignInModal();
+                return;
+            }
+            openUploadModal();
+        }
+
+        // Open upload modal
+        function openUploadModal() {
+            document.getElementById('uploadForm').reset();
+            document.getElementById('uploadModal').style.display = 'block';
+        }
+
+        // Close upload modal
+        function closeUploadModal() {
+            document.getElementById('uploadModal').style.display = 'none';
+        }
+
+        // Handle upload script
+        function handleUploadScript(event) {
+            event.preventDefault();
+
+            if (!currentUser) {
+                alert('You must be logged in to upload scripts');
+                return;
+            }
+
+            const title = document.getElementById('scriptTitle').value;
+            const game = document.getElementById('scriptGame').value;
+            const description = document.getElementById('scriptDescription').value;
+            const category = document.getElementById('scriptCategory').value;
+            const code = document.getElementById('scriptCode').value;
+            const image = document.getElementById('scriptImage').value;
+
+            let scripts = loadScripts();
+            const newScript = {
+                id: Date.now(),
+                title: title,
+                game: game,
+                description: description,
+                category: category,
+                code: code,
+                image: image,
+                author: currentUser.email.split('@')[0],
+                rating: 5,
+                downloads: '0',
+                uploadedAt: new Date().toISOString()
+            };
+
+            scripts.push(newScript);
+            saveScripts(scripts);
+
+            alert('Script uploaded successfully!');
+            closeUploadModal();
+            loadScriptsAndExecutors();
+        }
+
+        // Load scripts and executors
+        function loadScriptsAndExecutors() {
+            if (!currentUser) return;
+
+            const scripts = loadScripts();
+            const scriptsGrid = document.getElementById('scriptsGrid');
+
+            if (scripts.length === 0) {
+                scriptsGrid.innerHTML = '<p style="color: var(--text-secondary); grid-column: 1 / -1; text-align: center; padding: 3rem;">No scripts yet. Be the first to upload one!</p>';
+                loadDefaultExecutors();
+                return;
+            }
+
+            scriptsGrid.innerHTML = scripts.map(script => `
+                <div class="script-card" onclick="viewScript(${script.id})">
+                    <div class="script-author">${script.author}</div>
+                    <div class="script-image">
+                        ${script.image ? `<img src="${script.image}" alt="${script.title}">` : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>'}
+                    </div>
+                    <div class="script-content">
+                        <h3 class="script-title">${script.title}</h3>
+                        <p class="script-game">${script.game}</p>
+                        <p class="script-description">${script.description}</p>
+                        <div class="script-footer">
+                            <span class="script-rating">
+                                <span class="star">★</span> ${script.rating}
+                            </span>
+                            <span class="script-downloads">${script.downloads} downloads</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            loadDefaultExecutors();
+        }
+
+        // View script
+        function viewScript(scriptId) {
+            const scripts = loadScripts();
+            const script = scripts.find(s => s.id === scriptId);
+
+            if (!script) return;
+
+            document.getElementById('viewerTitle').textContent = script.title;
+            document.getElementById('viewerGameName').textContent = `Category: ${script.game}`;
+            document.getElementById('viewerDescription').textContent = script.description;
+            document.getElementById('viewerCode').textContent = script.code;
+            document.getElementById('scriptViewerModal').style.display = 'block';
+
+            window.currentViewingScript = script;
+        }
+
+        // Close script viewer
+        function closeScriptViewer() {
+            document.getElementById('scriptViewerModal').style.display = 'none';
+        }
+
+        // Copy script code
+        function copyScriptCode() {
+            const code = document.getElementById('viewerCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('✅ Script code copied to clipboard!');
+            });
+        }
+
+        // Load default executors
+        function loadDefaultExecutors() {
+            const executors = [
+                {
+                    id: 1,
+                    name: 'Synapse X',
+                    description: 'Advanced Roblox executor with Luau support',
+                    code: 'loadstring(game:HttpGet("https://example.com/synapsex.lua"))()',
+                    image: 'https://via.placeholder.com/280x180?text=Synapse+X'
+                },
+                {
+                    id: 2,
+                    name: 'Fluxus',
+                    description: 'Fast and reliable Lua executor',
+                    code: 'print("Fluxus Executor Loaded")',
+                    image: 'https://via.placeholder.com/280x180?text=Fluxus'
+                },
+                {
+                    id: 3,
+                    name: 'Arceus X',
+                    description: 'User-friendly executor with advanced features',
+                    code: 'print("Arceus X Ready")',
+                    image: 'https://via.placeholder.com/280x180?text=Arceus+X'
+                },
+                {
+                    id: 4,
+                    name: 'Delta Executor',
+                    description: 'Smooth and stable execution',
+                    code: 'print("Delta Loaded")',
+                    image: 'https://via.placeholder.com/280x180?text=Delta'
+                }
+            ];
+
+            const executorsGrid = document.getElementById('executorsGrid');
+            executorsGrid.innerHTML = executors.map(executor => `
+                <div class="executor-card" onclick="viewExecutor(${executor.id})">
+                    <div class="executor-image">
+                        <img src="${executor.image}" alt="${executor.name}">
+                    </div>
+                    <div class="script-content">
+                        <h3 class="script-title">${executor.name}</h3>
+                        <p class="script-description">${executor.description}</p>
+                        <div class="script-footer">
+                            <span style="color: var(--success);">⭐ Premium</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            window.executors = executors;
+        }
+
+        // View executor
+        function viewExecutor(executorId) {
+            const executor = window.executors.find(e => e.id === executorId);
+            if (!executor) return;
+
+            document.getElementById('executorViewerTitle').textContent = executor.name;
+            document.getElementById('executorDescription').textContent = executor.description;
+            document.getElementById('executorCode').textContent = executor.code;
+            document.getElementById('executorViewerModal').style.display = 'block';
+
+            window.currentViewingExecutor = executor;
+        }
+
+        // Close executor viewer
+        function closeExecutorViewer() {
+            document.getElementById('executorViewerModal').style.display = 'none';
+        }
+
+        // Copy executor code
+        function copyExecutorCode() {
+            const code = document.getElementById('executorCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('✅ Executor code copied to clipboard!');
+            });
+        }
 
         // Search functionality
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            console.log('Search:', e.target.value);
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const scripts = loadScripts();
+                const filtered = scripts.filter(script =>
+                    script.title.toLowerCase().includes(searchTerm) ||
+                    script.game.toLowerCase().includes(searchTerm)
+                );
 
-        // Category filter functionality
-        document.getElementById('categoryFilter').addEventListener('change', function(e) {
-            console.log('Category:', e.target.value);
+                const scriptsGrid = document.getElementById('scriptsGrid');
+                if (filtered.length === 0) {
+                    scriptsGrid.innerHTML = '<p style="color: var(--text-secondary); grid-column: 1 / -1; text-align: center;">No scripts found</p>';
+                    return;
+                }
+
+                scriptsGrid.innerHTML = filtered.map(script => `
+                    <div class="script-card" onclick="viewScript(${script.id})">
+                        <div class="script-author">${script.author}</div>
+                        <div class="script-image">
+                            ${script.image ? `<img src="${script.image}" alt="${script.title}">` : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>'}
+                        </div>
+                        <div class="script-content">
+                            <h3 class="script-title">${script.title}</h3>
+                            <p class="script-game">${script.game}</p>
+                            <p class="script-description">${script.description}</p>
+                            <div class="script-footer">
+                                <span class="script-rating">
+                                    <span class="star">★</span> ${script.rating}
+                                </span>
+                                <span class="script-downloads">${script.downloads} downloads</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            });
+
+            document.getElementById('categoryFilter').addEventListener('change', function(e) {
+                const category = e.target.value;
+                const scripts = loadScripts();
+                let filtered = scripts;
+
+                if (category) {
+                    filtered = scripts.filter(script => script.category === category);
+                }
+
+                const scriptsGrid = document.getElementById('scriptsGrid');
+                if (filtered.length === 0) {
+                    scriptsGrid.innerHTML = '<p style="color: var(--text-secondary); grid-column: 1 / -1; text-align: center;">No scripts in this category</p>';
+                    return;
+                }
+
+                scriptsGrid.innerHTML = filtered.map(script => `
+                    <div class="script-card" onclick="viewScript(${script.id})">
+                        <div class="script-author">${script.author}</div>
+                        <div class="script-image">
+                            ${script.image ? `<img src="${script.image}" alt="${script.title}">` : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>'}
+                        </div>
+                        <div class="script-content">
+                            <h3 class="script-title">${script.title}</h3>
+                            <p class="script-game">${script.game}</p>
+                            <p class="script-description">${script.description}</p>
+                            <div class="script-footer">
+                                <span class="script-rating">
+                                    <span class="star">★</span> ${script.rating}
+                                </span>
+                                <span class="script-downloads">${script.downloads} downloads</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            });
+
+            // Close modals when clicking outside
+            window.onclick = function(event) {
+                const authModal = document.getElementById('authModal');
+                const uploadModal = document.getElementById('uploadModal');
+                const scriptViewerModal = document.getElementById('scriptViewerModal');
+                const executorViewerModal = document.getElementById('executorViewerModal');
+
+                if (event.target === authModal) {
+                    if (!currentUser) return; // Don't close auth modal if not logged in
+                    closeAuthModal();
+                }
+                if (event.target === uploadModal) closeUploadModal();
+                if (event.target === scriptViewerModal) closeScriptViewer();
+                if (event.target === executorViewerModal) closeExecutorViewer();
+            }
+
+            initializeApp();
         });
     </script>
 </body>
