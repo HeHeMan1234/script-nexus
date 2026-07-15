@@ -192,6 +192,27 @@
             color: var(--text-primary);
         }
 
+        .community-btn {
+            padding: 0.6rem 1.2rem;
+            background-color: var(--accent-primary);
+            color: var(--accent-hover);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .community-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+        }
+
         .upload-btn {
             padding: 0.6rem 1.2rem;
             background-color: var(--accent-primary);
@@ -499,1345 +520,220 @@
             flex: 1;
         }
 
-        .script-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
-        }
-
-        .status-badge {
-            padding: 0.4rem 0.8rem;
-            border-radius: 2px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.3px;
-        }
-
-        .status-working {
-            background-color: var(--text-primary);
-            color: var(--bg-primary);
-        }
-
-        .status-patched {
-            background-color: var(--text-secondary);
-            color: var(--bg-primary);
-        }
-
         .script-footer {
             display: flex;
-            gap: 0.5rem;
-            margin-top: auto;
-        }
-
-        .btn-get {
-            flex: 1;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--accent-primary);
-            color: var(--accent-hover);
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-get:hover {
-            background-color: var(--accent-hover);
-            color: var(--accent-primary);
-            border: 1px solid var(--accent-primary);
-            transform: translateY(-2px);
-        }
-
-        /* ===== EXECUTOR SECTION ===== */
-        .executor-section {
-            max-width: 1400px;
-            margin: 4rem auto 0;
-            padding: 0 2rem;
-        }
-
-        .executor-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .executor-card {
-            background-color: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 2rem;
-            transition: var(--transition);
-        }
-
-        .executor-card:hover {
-            border-color: var(--text-primary);
-            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .executor-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .executor-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .executor-icon svg {
-            width: 40px;
-            height: 40px;
-            opacity: 0.5;
-        }
-
-        .executor-info h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .executor-info p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .executor-features {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .executor-features li {
-            padding: 0.7rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
-
-        .executor-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--text-primary);
-            font-weight: bold;
-        }
-
-        .executor-footer {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .executor-footer .btn {
-            flex: 1;
-        }
-
-        /* ===== MODAL ===== */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background-color: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            width: 90%;
-            max-width: 700px;
-            max-height: 80vh;
-            overflow-y: auto;
-            animation: slideIn 0.3s ease-in-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-header {
-            padding: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
         }
 
-        .modal-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
+        .script-rating {
             display: flex;
             align-items: center;
-            justify-content: center;
-        }
-
-        .modal-close:hover {
-            color: var(--text-secondary);
-            transform: rotate(90deg);
-        }
-
-        .modal-body {
-            padding: 2rem;
-        }
-
-        .code-block {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            overflow-x: auto;
-            position: relative;
-        }
-
-        .code-block code {
-            color: var(--text-primary);
-            font-family: 'Courier New', 'Courier', monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            display: block;
-            white-space: pre;
-        }
-
-        .copy-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.6rem 1.2rem;
-            background-color: var(--text-primary);
-            color: var(--bg-primary);
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
+            gap: 0.3rem;
             font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
         }
 
-        .copy-btn:hover {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            border: 1px solid var(--text-primary);
-            transform: translateY(-2px);
+        .star {
+            color: #fbbf24;
         }
 
-        .copy-feedback {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: var(--text-primary);
-            color: var(--bg-primary);
-            padding: 1rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            animation: slideInUp 0.3s ease-in-out;
-            z-index: 2001;
-        }
-
-        @keyframes slideInUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* ===== SIGN IN MODAL ===== */
-        .signin-modal {
-            display: none;
-            position: fixed;
-            z-index: 3000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        .signin-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .signin-content {
-            background-color: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            width: 90%;
-            max-width: 500px;
-            padding: 2rem;
-            animation: slideIn 0.3s ease-in-out;
-        }
-
-        .signin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .signin-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .signin-close {
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .signin-close:hover {
+        .script-downloads {
+            font-size: 0.85rem;
             color: var(--text-secondary);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            border-radius: 4px;
-            transition: var(--transition);
-            font-size: 0.95rem;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--text-primary);
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
-        }
-
-        .form-group input::placeholder {
-            color: var(--text-secondary);
-        }
-
-        .btn-signin-submit {
-            width: 100%;
-            padding: 1rem;
-            background-color: var(--accent-primary);
-            color: var(--accent-hover);
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            font-size: 0.95rem;
-        }
-
-        .btn-signin-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
-        }
-
-        /* ===== UPLOAD SCRIPT MODAL ===== */
-        .upload-modal {
-            display: none;
-            position: fixed;
-            z-index: 3000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        .upload-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .upload-content {
-            background-color: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            width: 90%;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            padding: 2rem;
-            animation: slideIn 0.3s ease-in-out;
-        }
-
-        .upload-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .upload-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .upload-close {
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .upload-close:hover {
-            color: var(--text-secondary);
-        }
-
-        .image-upload-area {
-            border: 2px dashed var(--border-color);
-            border-radius: 4px;
-            padding: 2rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .image-upload-area:hover {
-            border-color: var(--text-primary);
-            background-color: rgba(255, 255, 255, 0.02);
-        }
-
-        .image-upload-area input {
-            display: none;
-        }
-
-        .image-preview {
-            width: 100%;
-            height: 200px;
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            object-fit: cover;
-            display: none;
-        }
-
-        .image-preview.active {
-            display: block;
-        }
-
-        .btn-upload-submit {
-            width: 100%;
-            padding: 1rem;
-            background-color: var(--accent-primary);
-            color: var(--accent-hover);
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            font-size: 0.95rem;
-        }
-
-        .btn-upload-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background-color: var(--bg-tertiary);
+            background-color: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
-            padding: 2rem;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+            padding: 3rem 2rem;
             margin-top: 4rem;
         }
 
-        footer a {
-            color: var(--text-primary);
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
             text-decoration: none;
             transition: var(--transition);
+            display: block;
+            padding: 0.5rem 0;
         }
 
-        footer a:hover {
+        .footer-section a:hover {
+            color: var(--text-primary);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
             color: var(--text-secondary);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .nav-links {
-                gap: 1.5rem;
-            }
-
-            .scripts-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-                gap: 1.5rem;
-            }
-
-            .executor-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
             .nav-container {
-                padding: 1rem 1.5rem;
+                padding: 1rem;
             }
-
-            .logo {
-                font-size: 1.3rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-                display: none;
-            }
-
-            .nav-right {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero {
-                min-height: 60vh;
-                padding: 2rem 1.5rem;
-            }
-
-            .hero h1 {
-                margin-bottom: 0.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .hero-buttons {
-                gap: 1rem;
-            }
-
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .search-section {
-                padding: 0 1.5rem;
-                margin: 2rem auto;
-            }
-
-            .scripts-section {
-                padding: 0 1.5rem 2rem;
-            }
-
-            .scripts-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .executor-section {
-                padding: 0 1.5rem;
-            }
-
-            .modal-content {
-                width: 95%;
-                max-height: 90vh;
-            }
-
-            .modal-header {
-                padding: 1.5rem;
-            }
-
-            .modal-body {
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-links {
-                display: none;
-            }
-
-            .logo-section {
-                gap: 0.4rem;
-            }
-
-            .logo-icon {
-                width: 24px;
-                font-size: 1.2rem;
-            }
-
-            .logo {
-                font-size: 1.1rem;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 0.95rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .search-container {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .copy-feedback {
-                bottom: 1rem;
-                right: 1rem;
-                left: 1rem;
-            }
-
-            .auth-section {
-                width: 100%;
-                flex-direction: column;
-            }
-
-            .btn-signin, .upload-btn {
-                width: 100%;
-            }
-        }
-
-        /* ===== NO RESULTS MESSAGE ===== */
-        .no-results {
-            text-align: center;
-            padding: 3rem 2rem;
-            color: var(--text-secondary);
-        }
-
-        .no-results p {
-            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION -->
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo-section">
-                <div class="logo-icon"></svg>&lt;/&gt;</div>
-                <a href="#" class="logo">NEXUS SCRIPTS</a>
+                <div class="logo-icon"></> </div>
+                <a href="#" class="logo">NEXUS</a>
             </div>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#executors">Executors</a></li>
                     <li><a href="#scripts">Scripts</a></li>
-                    <li><a href="#status">Status</a></li>
-                    <li><a href="https://github.com/HeHeMan1234/communication-nexus" target="_blank">Community</a></li>
+                    <li><a href="https://HeHeMan1234.github.io/communication-nexus/">Community</a></li>
                 </ul>
-                <div class="auth-section" id="authSection">
-                    <button class="btn-signin" onclick="openSignInModal()">Sign In</button>
-                    <button class="upload-btn" onclick="showAuthRequired()">+ Upload Script</button>
-                </div>
-                <div class="user-profile" id="userProfile" style="display: none;">
-                    <div class="user-avatar" id="userAvatar"></div>
-                    <span id="userName" style="font-size: 0.9rem;"></span>
-                    <button class="upload-btn" onclick="openUploadModal()">+ Upload</button>
-                    <button class="btn-logout" onclick="logout()">Logout</button>
+                <div class="auth-section">
+                    <button class="btn-signin">Sign In</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <h1>The Ultimate Roblox Script Hub</h1>
-            <p>Discover, share, and execute premium Roblox scripts. Access thousands of verified executors and community-created scripts for your favorite games.</p>
+            <h1>Nexus Scripts</h1>
+            <p>The Ultimate Roblox Script Hub - Explore, Share & Collaborate</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('scriptModal').classList.add('active')">Download Executor</button>
-                <button class="btn btn-secondary" onclick="document.querySelector('.search-input').focus()">Browse Scripts</button>
+                <a href="#scripts" class="btn btn-primary">Explore Scripts</a>
+                <a href="https://HeHeMan1234.github.io/communication-nexus/" class="btn btn-secondary">Join Community</a>
             </div>
         </div>
     </section>
 
-    <!-- SEARCH & FILTER SECTION -->
+    <!-- Search Section -->
     <section class="search-section" id="scripts">
+        <div class="search-top">
+            <h2 class="section-title">Browse Scripts</h2>
+        </div>
         <div class="search-container">
             <div class="search-input-wrapper">
-                <input 
-                    type="text" 
-                    class="search-input" 
-                    placeholder="Search scripts by name or game..." 
-                    id="searchInput"
-                    onkeyup="filterScripts()"
-                >
+                <input type="text" class="search-input" placeholder="Search scripts by name..." id="searchInput">
             </div>
-            <select class="category-filter" id="categoryFilter" onchange="filterScripts()">
-                <option value="">All Games</option>
-                <option value="blox-fruits">Blox Fruits</option>
-                <option value="pet-simulator">Pet Simulator X</option>
-                <option value="adopt-me">Adopt Me</option>
-                <option value="tycoon">Tycoon Games</option>
-                <option value="obby">Obbies</option>
+            <select class="category-filter" id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="game">Game Exploits</option>
+                <option value="utility">Utility</option>
+                <option value="admin">Admin</option>
+                <option value="other">Other</option>
             </select>
         </div>
+    </section>
 
-        <!-- SCRIPTS GRID -->
-        <div class="scripts-section">
-            <h2 class="section-title">Featured Scripts</h2>
-            <div class="scripts-grid" id="scriptsGrid">
-                <!-- Scripts will be populated by JavaScript -->
+    <!-- Scripts Grid -->
+    <section class="scripts-section">
+        <div class="scripts-grid" id="scriptsGrid">
+            <!-- Sample Script Cards -->
+            <div class="script-card">
+                <div class="script-author">Author: Dev</div>
+                <div class="script-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <div class="script-content">
+                    <h3 class="script-title">Speed Script</h3>
+                    <p class="script-game">🎮 Roblox Game</p>
+                    <p class="script-description">A versatile speed enhancement script perfect for all your scripting needs.</p>
+                    <div class="script-footer">
+                        <span class="script-rating">
+                            <span class="star">★</span> 4.5
+                        </span>
+                        <span class="script-downloads">2.3k downloads</span>
+                    </div>
+                </div>
             </div>
-            <div class="no-results" id="noResults" style="display: none;">
-                <p>No scripts found matching your search. Try adjusting your filters.</p>
-            </div>
+            <!-- Add more script cards as needed -->
         </div>
     </section>
 
-    <!-- EXECUTOR SECTION -->
-    <section class="executor-section" id="executors">
-        <h2 class="section-title">Top Executors</h2>
-        <div class="executor-grid">
-            <div class="executor-card">
-                <div class="executor-header">
-                    <div class="executor-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
-                        </svg>
-                    </div>
-                    <div class="executor-info">
-                        <h3>Executor X</h3>
-                        <p>Premium • Highly Stable</p>
-                    </div>
-                </div>
-                <ul class="executor-features">
-                    <li>64-bit architecture support</li>
-                    <li>Lua 5.1 compatibility</li>
-                    <li>Advanced debugging tools</li>
-                    <li>Zero-day exploit protection</li>
-                    <li>24/7 technical support</li>
-                </ul>
-                <div class="executor-footer">
-                    <button class="btn btn-primary" onclick="showModal('Executor X')">Download</button>
-                    <button class="btn btn-secondary" onclick="window.open('https://github.com/HeHeMan1234/communication-nexus', '_blank')">Info</button>
-                </div>
-            </div>
-
-            <div class="executor-card">
-                <div class="executor-header">
-                    <div class="executor-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                        </svg>
-                    </div>
-                    <div class="executor-info">
-                        <h3>Executor Y</h3>
-                        <p>Enterprise • Undetected</p>
-                    </div>
-                </div>
-                <ul class="executor-features">
-                    <li>Anti-ban technology</li>
-                    <li>Cloud-based execution</li>
-                    <li>Real-time script updates</li>
-                    <li>Multi-game support</li>
-                    <li>Community forum access</li>
-                </ul>
-                <div class="executor-footer">
-                    <button class="btn btn-primary" onclick="showModal('Executor Y')">Download</button>
-                    <button class="btn btn-secondary" onclick="window.open('https://github.com/HeHeMan1234/communication-nexus', '_blank')">Info</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SCRIPT MODAL -->
-    <div class="modal" id="scriptModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Script Code</h2>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="code-block">
-                    <button class="copy-btn" onclick="copyCode()">Copy Code</button>
-                    <code id="codeContent">-- Loading script code...
--- This is a sample Lua script for Roblox
-
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-
--- Auto farm function
-local function autoFarm()
-    while true do
-        -- Your farming logic here
-        task.wait(1)
-    end
-end
-
--- Start farming
-autoFarm()
-
--- Clean up on player death
-character.Humanoid.Died:Connect(function()
-    print("Character died, stopping farm...")
-end)</code>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; text-align: center;">
-                    Paste this code into your executor's console. Always use a trusted executor.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- SIGN IN MODAL -->
-    <div class="signin-modal" id="signinModal">
-        <div class="signin-content">
-            <div class="signin-header">
-                <h2>Sign In</h2>
-                <button class="signin-close" onclick="closeSignInModal()">&times;</button>
-            </div>
-            <form onsubmit="handleSignIn(event)">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter your username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
-                </div>
-                <button type="submit" class="btn-signin-submit">Sign In</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- UPLOAD SCRIPT MODAL -->
-    <div class="upload-modal" id="uploadModal">
-        <div class="upload-content">
-            <div class="upload-header">
-                <h2>Upload Your Script</h2>
-                <button class="upload-close" onclick="closeUploadModal()">&times;</button>
-            </div>
-            <form onsubmit="handleUploadScript(event)">
-                <div class="form-group">
-                    <label for="scriptName">Script Name</label>
-                    <input type="text" id="scriptName" placeholder="e.g., Blox Fruits Autofarm" required>
-                </div>
-                <div class="form-group">
-                    <label for="scriptGame">Game</label>
-                    <select id="scriptGame" style="width: 100%; padding: 0.8rem 1rem; background-color: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 4px;" required>
-                        <option value="">Select a game</option>
-                        <option value="blox-fruits">Blox Fruits</option>
-                        <option value="pet-simulator">Pet Simulator X</option>
-                        <option value="adopt-me">Adopt Me</option>
-                        <option value="tycoon">Tycoon Games</option>
-                        <option value="obby">Obbies</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="scriptDescription">Description</label>
-                    <textarea id="scriptDescription" placeholder="Describe your script..." style="width: 100%; padding: 0.8rem 1rem; background-color: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 4px; resize: vertical; min-height: 100px;" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Script Image</label>
-                    <div class="image-upload-area" onclick="document.getElementById('imageInput').click()">
-                        <p style="color: var(--text-secondary);">📸 Click to upload image or drag & drop</p>
-                        <input type="file" id="imageInput" accept="image/*" onchange="handleImageUpload(event)">
-                    </div>
-                    <img id="imagePreview" class="image-preview" src="" alt="Preview">
-                </div>
-                <div class="form-group">
-                    <label for="scriptCode">Script Code</label>
-                    <textarea id="scriptCode" placeholder="Paste your Lua script code here..." style="width: 100%; padding: 0.8rem 1rem; background-color: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 4px; resize: vertical; min-height: 150px; font-family: 'Courier New', monospace;" required></textarea>
-                </div>
-                <button type="submit" class="btn-upload-submit">Upload Script</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Nexus Scripts. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="https://github.com/HeHeMan1234/communication-nexus" target="_blank">Community Hub</a></p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Nexus Scripts</h3>
+                <ul>
+                    <li><a href="#scripts">Browse Scripts</a></li>
+                    <li><a href="https://HeHeMan1234.github.io/communication-nexus/">Community Forum</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="https://HeHeMan1234.github.io/communication-nexus/">Discussions</a></li>
+                    <li><a href="https://HeHeMan1234.github.io/communication-nexus/">Help & Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nexus Scripts. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
-        // Sample script data with default scripts
-        let scriptsData = [
+        // Sample data
+        const scripts = [
             {
-                id: 1,
-                title: "Blox Fruits Autofarm",
-                game: "blox-fruits",
-                gameName: "Blox Fruits",
-                status: "working",
-                category: "Farm",
-                description: "Advanced autofarm script with level bypass and boss detection.",
-                code: `-- Blox Fruits AutoFarm Script
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
--- Start farming
-print("Autofarm Started")
-while true do
-    -- Farming logic
-    task.wait(1)
-end`,
-                author: "ScriptHub",
-                image: null
+                title: 'Speed Script',
+                game: 'Roblox Game',
+                description: 'A versatile speed enhancement script perfect for all your scripting needs.',
+                author: 'Dev',
+                rating: 4.5,
+                downloads: '2.3k'
             },
             {
-                id: 2,
-                title: "Pet Simulator X Money Glitch",
-                game: "pet-simulator",
-                gameName: "Pet Simulator X",
-                status: "patched",
-                category: "Exploit",
-                description: "Classic money duplication method. May not work with latest update.",
-                code: `-- Pet Simulator X Script
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
--- Money duplication
-function duplicateMoney(amount)
-    -- Implementation here
-    print("Duplicating: " .. amount)
-end
-
-duplicateMoney(1000000)`,
-                author: "ScriptHub",
-                image: null
-            },
-            {
-                id: 3,
-                title: "Adopt Me Pet Duper",
-                game: "adopt-me",
-                gameName: "Adopt Me",
-                status: "working",
-                category: "Dupe",
-                description: "Duplicate rare pets safely with anti-detection.",
-                code: `-- Adopt Me Pet Duplication
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
-local function dupePet(petName)
-    print("Attempting to dupe: " .. petName)
-    -- Duplication code here
-end
-
-dupePet("Legendary Dragon")`,
-                author: "ScriptHub",
-                image: null
-            },
-            {
-                id: 4,
-                title: "Universal Tycoon Clicker",
-                game: "tycoon",
-                gameName: "Tycoon Games",
-                status: "working",
-                category: "Click",
-                description: "Works on most Tycoon games with auto-click feature.",
-                code: `-- Universal Tycoon Clicker
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
-local clickSpeed = 0.1
-
-while true do
-    -- Click logic
-    task.wait(clickSpeed)
-end`,
-                author: "ScriptHub",
-                image: null
-            },
-            {
-                id: 5,
-                title: "Obby Speed Runner",
-                game: "obby",
-                gameName: "Obbies",
-                status: "working",
-                category: "Speed",
-                description: "Speed up your obby runs with enhanced movement.",
-                code: `-- Speedrun Script for Obbies
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-local character = player.Character
-
--- Increase speed
-character.Humanoid.WalkSpeed = 50
-
-print("Speed increased to 50!")`,
-                author: "ScriptHub",
-                image: null
-            },
-            {
-                id: 6,
-                title: "Advanced Game Teleporter",
-                game: "pet-simulator",
-                gameName: "Pet Simulator X",
-                status: "working",
-                category: "Teleport",
-                description: "Teleport anywhere in the game with GPS markers.",
-                code: `-- Advanced Teleporter Script
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-local character = player.Character
-
-function teleportTo(position)
-    character:MoveTo(position)
-end
-
--- Teleport to specific location
-teleportTo(Vector3.new(100, 50, 100))`,
-                author: "ScriptHub",
-                image: null
+                title: 'Admin Panel',
+                game: 'Game Admin',
+                description: 'Professional admin panel for complete server control.',
+                author: 'Admin',
+                rating: 4.8,
+                downloads: '5.1k'
             }
         ];
 
-        let currentUser = null;
-
-        // Local storage management
-        function saveScripts() {
-            localStorage.setItem('nexusScripts', JSON.stringify(scriptsData));
-        }
-
-        function loadScripts() {
-            const saved = localStorage.getItem('nexusScripts');
-            if (saved) {
-                scriptsData = JSON.parse(saved);
-            }
-        }
-
-        function getCurrentUser() {
-            const user = localStorage.getItem('nexusCurrentUser');
-            return user ? JSON.parse(user) : null;
-        }
-
-        function setCurrentUser(user) {
-            localStorage.setItem('nexusCurrentUser', JSON.stringify(user));
-            currentUser = user;
-            updateAuthUI();
-        }
-
-        function clearCurrentUser() {
-            localStorage.removeItem('nexusCurrentUser');
-            currentUser = null;
-            updateAuthUI();
-        }
-
-        // Auth functions
-        function openSignInModal() {
-            document.getElementById('signinModal').classList.add('active');
-        }
-
-        function closeSignInModal() {
-            document.getElementById('signinModal').classList.remove('active');
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
-        }
-
-        function handleSignIn(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Simple client-side auth (in production, use real authentication)
-            const user = {
-                username: username,
-                avatar: username.charAt(0).toUpperCase()
-            };
-
-            setCurrentUser(user);
-            closeSignInModal();
-            showNotification(`Welcome, ${username}!`);
-        }
-
-        function logout() {
-            clearCurrentUser();
-            showNotification('You have been logged out.');
-        }
-
-        function updateAuthUI() {
-            const authSection = document.getElementById('authSection');
-            const userProfile = document.getElementById('userProfile');
-
-            if (currentUser) {
-                authSection.style.display = 'none';
-                userProfile.style.display = 'flex';
-                document.getElementById('userAvatar').textContent = currentUser.avatar;
-                document.getElementById('userName').textContent = currentUser.username;
-            } else {
-                authSection.style.display = 'flex';
-                userProfile.style.display = 'none';
-            }
-        }
-
-        function showAuthRequired() {
-            showNotification('Please sign in to upload scripts.');
-            setTimeout(() => openSignInModal(), 500);
-        }
-
-        // Upload functions
-        function openUploadModal() {
-            if (!currentUser) {
-                showAuthRequired();
-                return;
-            }
-            document.getElementById('uploadModal').classList.add('active');
-        }
-
-        function closeUploadModal() {
-            document.getElementById('uploadModal').classList.remove('active');
-            resetUploadForm();
-        }
-
-        function resetUploadForm() {
-            document.getElementById('scriptName').value = '';
-            document.getElementById('scriptGame').value = '';
-            document.getElementById('scriptDescription').value = '';
-            document.getElementById('scriptCode').value = '';
-            document.getElementById('imagePreview').classList.remove('active');
-            document.getElementById('imageInput').value = '';
-        }
-
-        function handleImageUpload(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const preview = document.getElementById('imagePreview');
-                    preview.src = e.target.result;
-                    preview.classList.add('active');
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function handleUploadScript(event) {
-            event.preventDefault();
-
-            const newScript = {
-                id: scriptsData.length + 1,
-                title: document.getElementById('scriptName').value,
-                game: document.getElementById('scriptGame').value,
-                gameName: document.getElementById('scriptGame').options[document.getElementById('scriptGame').selectedIndex].text,
-                status: "working",
-                category: "Community",
-                description: document.getElementById('scriptDescription').value,
-                code: document.getElementById('scriptCode').value,
-                author: currentUser.username,
-                image: document.getElementById('imagePreview').src || null
-            };
-
-            scriptsData.unshift(newScript);
-            saveScripts();
-            closeUploadModal();
-            filterScripts();
-            showNotification('Script uploaded successfully! 🎉');
-        }
-
-        // Script rendering
-        function renderScripts(scripts) {
-            const grid = document.getElementById('scriptsGrid');
-            const noResults = document.getElementById('noResults');
-
-            if (scripts.length === 0) {
-                grid.innerHTML = '';
-                noResults.style.display = 'block';
-                return;
-            }
-
-            noResults.style.display = 'none';
-            grid.innerHTML = scripts.map(script => `
-                <div class="script-card">
-                    <div class="script-author">By ${script.author}</div>
-                    <div class="script-image">
-                        ${script.image ? `<img src="${script.image}" alt="Script preview">` : `
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        `}
-                    </div>
-                    <div class="script-content">
-                        <h3 class="script-title">${script.title}</h3>
-                        <p class="script-game">${script.gameName}</p>
-                        <p class="script-description">${script.description}</p>
-                        <div class="script-meta">
-                            <span class="status-badge status-${script.status}">${script.status.toUpperCase()}</span>
-                            <span style="color: var(--text-secondary);">${script.category}</span>
-                        </div>
-                        <div class="script-footer">
-                            <button class="btn-get" onclick='showScriptModal("${script.title}", "${script.code.replace(/"/g, '\\"').replace(/\n/g, '\\n')}")'>Get Script</button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function filterScripts() {
-            const searchInput = document.getElementById('searchInput').value.toLowerCase();
-            const category = document.getElementById('categoryFilter').value;
-
-            const filtered = scriptsData.filter(script => {
-                const matchesSearch = script.title.toLowerCase().includes(searchInput) || 
-                                    script.gameName.toLowerCase().includes(searchInput) ||
-                                    script.author.toLowerCase().includes(searchInput);
-                const matchesCategory = !category || script.game === category;
-                return matchesSearch && matchesCategory;
-            });
-
-            renderScripts(filtered);
-        }
-
-        // Modal functions
-        function showScriptModal(title, code) {
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('codeContent').textContent = code;
-            document.getElementById('scriptModal').classList.add('active');
-        }
-
-        function showModal(title) {
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('codeContent').textContent = `-- ${title} Installation Guide\n\nDownload the latest version from our community hub.\n\n1. Extract the files\n2. Run the installer\n3. Follow the setup wizard\n4. Start executing scripts!\n\nVisit our Community Hub: github.com/HeHeMan1234/communication-nexus`;
-            document.getElementById('scriptModal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('scriptModal').classList.remove('active');
-        }
-
-        function copyCode() {
-            const code = document.getElementById('codeContent').textContent;
-            navigator.clipboard.writeText(code).then(() => {
-                showNotification('✓ Code copied to clipboard!');
-            });
-        }
-
-        function showNotification(message) {
-            const feedback = document.createElement('div');
-            feedback.className = 'copy-feedback';
-            feedback.textContent = message;
-            document.body.appendChild(feedback);
-            setTimeout(() => feedback.remove(), 3000);
-        }
-
-        // Event listeners
-        document.getElementById('scriptModal').addEventListener('click', (e) => {
-            if (e.target.id === 'scriptModal') {
-                closeModal();
-            }
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            console.log('Search:', e.target.value);
         });
 
-        document.getElementById('signinModal').addEventListener('click', (e) => {
-            if (e.target.id === 'signinModal') {
-                closeSignInModal();
-            }
+        // Category filter functionality
+        document.getElementById('categoryFilter').addEventListener('change', function(e) {
+            console.log('Category:', e.target.value);
         });
-
-        document.getElementById('uploadModal').addEventListener('click', (e) => {
-            if (e.target.id === 'uploadModal') {
-                closeUploadModal();
-            }
-        });
-
-        // Initialize
-        loadScripts();
-        currentUser = getCurrentUser();
-        updateAuthUI();
-        renderScripts(scriptsData);
     </script>
 </body>
 </html>
